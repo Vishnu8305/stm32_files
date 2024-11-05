@@ -1,0 +1,48 @@
+!SESSION 2024-08-27 07:48:33.891 -----------------------------------------------
+eclipse.buildId=Version 1.16.0
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data D:\embaded-c\incstruter\target
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-08-27 07:48:42.072
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-08-27 07:48:42.073
+!MESSAGE Log4j2 initialized with config file D:\embaded-c\incstruter\target\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-08-27 07:48:45.709
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:49:34.559
+!MESSAGE Indexed '001HelloWorld' (3 sources, 55 headers) in 1.24 sec: 2,098 declarations; 2,963 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.04%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:49:35.046
+!MESSAGE Indexed '008button_ISR' (3 sources, 55 headers) in 0.484 sec: 2,114 declarations; 2,995 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.039%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:49:35.434
+!MESSAGE Indexed '009packed_Vsnonpacked' (3 sources, 55 headers) in 0.385 sec: 2,104 declarations; 2,984 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.039%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:49:35.760
+!MESSAGE Indexed '003Add' (3 sources, 54 headers) in 0.326 sec: 2,091 declarations; 2,957 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.04%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:49:36.107
+!MESSAGE Indexed '004led_on' (3 sources, 53 headers) in 0.345 sec: 1,955 declarations; 2,824 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.042%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:49:36.403
+!MESSAGE Indexed '006pin_read' (3 sources, 53 headers) in 0.293 sec: 1,958 declarations; 2,834 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.042%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:49:36.694
+!MESSAGE Indexed '011keypad' (3 sources, 55 headers) in 0.289 sec: 2,106 declarations; 3,037 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.039%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:49:37.002
+!MESSAGE Indexed '002Sizeof' (3 sources, 55 headers) in 0.307 sec: 2,098 declarations; 2,967 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.039%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:49:37.729
+!MESSAGE Indexed '010led_toggle_bitfields' (3 sources, 54 headers) in 0.724 sec: 2,021 declarations; 2,896 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.041%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:49:38.323
+!MESSAGE Indexed '007volatile' (3 sources, 53 headers) in 0.591 sec: 1,954 declarations; 2,820 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.042%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:49:38.897
+!MESSAGE Indexed '005led_toggle' (3 sources, 53 headers) in 0.572 sec: 1,957 declarations; 2,831 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.042%)

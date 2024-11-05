@@ -1,0 +1,17 @@
+22:08:05 **** Incremental Build of configuration Debug for project pin_Read ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DNUCLEO_L476RG -DSTM32L476RGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "pin_Read.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embaded-c\my_workspace\target\pin_Read\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pin_Read.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pin_Read.elf
+ 
+arm-none-eabi-size  pin_Read.elf 
+arm-none-eabi-objdump -h -S pin_Read.elf  > "pin_Read.list"
+   text	   data	    bss	    dec	    hex	filename
+    760	      0	   1568	   2328	    918	pin_Read.elf
+Finished building: default.size.stdout
+ 
+Finished building: pin_Read.list
+ 
+
+22:08:06 Build Finished. 0 errors, 0 warnings. (took 522ms)
+

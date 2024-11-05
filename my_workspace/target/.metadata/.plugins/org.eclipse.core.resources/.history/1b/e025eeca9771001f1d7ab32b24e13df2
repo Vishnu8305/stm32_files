@@ -1,0 +1,39 @@
+#include <stdint.h>
+#include <stdio.h>
+uint8_t volatile button_press = 0;
+uint32_t button_count = 0;
+void button_init(void);
+	uint32_t *pClkCtrlReg 						=(uint32_t*)(0x40021000 + 0x00);
+	uint32_t *pClkCtrlRegApb2 					=(uint32_t*)(0x40010000 + 0x4C);
+	uint32_t *pGPIOAModeReg						=(uint32_t*)(0x48000000 + 0x00);
+	uint32_t *pEXTIMaskReg						=(uint32_t*)(0x40010400 + 0x00);
+	uint32_t *pEXTTIEdgeCtrlReg					=(uint32_t*)(0x40010400 + 0x0C);
+	uint32_t *pEXTTIPendReg						=(uint32_t*)(0x40010400 + 0x14);
+	uint32_t *pNVICIRQEnReg						=(uint32_t*)(0x00000058);
+
+
+void buttion_init(void){
+	*pClkCtrlReg |= (1<<0);
+	*pClkCtrlRegApb2 |= (1<<14);
+	*pEXTTIEdgeCtrlReg |= (1<<0);
+	*pEXTIMaskReg |= (1<<0);
+	*pNVICIRQEnReg |= (1<<6);
+}
+	int main(void)
+{
+	button_init();
+	while(1){
+		*pEXTIMaskReg &= ~(1<<0);
+		if (button_press){
+			for (uint32_t volatile i=0;i<500000/2;i++);
+			button_count++;
+			printf("Buton pressed :%lu\n",button_count);
+			button_press=0;
+		}
+		*pEXTIMaskReg |= (1<<0);
+	}
+}
+void EXTI0_IRQHandler(void){
+	button_press =1;
+	*pEXTTIPendReg |= (1<<0);
+}

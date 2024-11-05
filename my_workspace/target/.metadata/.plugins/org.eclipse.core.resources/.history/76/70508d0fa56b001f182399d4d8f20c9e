@@ -1,0 +1,37 @@
+#include <stdint.h>
+#include <stdio.h>
+
+int main(void)
+{
+    // 1. Enable clock for GPIOA
+    uint32_t *PResi = (uint32_t*)0x4002104C;
+    *PResi |= (1 << 0);  // Enable clock for GPIOA (set bit 0)
+
+    // 2. Configure PA0 as output
+    uint32_t *PMode = (uint32_t*)0x48000000;
+    *PMode &= ~(3 << 0);  // Clear mode bits 0 and 1 for PA0
+    *PMode |= (1 << 0);   // Set PA0 to output mode (01)
+
+    // 3. Configure PA1 as input
+    *PMode &= ~(3 << 2);  // Clear mode bits 2 and 3 for PA1 (input mode)
+
+    // 4. ODR and IDR pointers
+    uint32_t *POut = (uint32_t*)0x48000014;  // ODR (output data register for PA0)
+    uint32_t *PIn = (uint32_t*)0x48000010;   // IDR (input data register for PA1)
+
+    // Main loop
+    while(1)
+    {
+        // Read PA1 input state
+        uint8_t in = (uint8_t)(*PIn & (1 << 1));  // Check the state of PA1
+
+        if(in)
+        {
+            *POut |= (1 << 0);  // Set PA0 high (turn LED on)
+        }
+        else
+        {
+            *POut &= ~(1 << 0);  // Set PA0 low (turn LED off)
+        }
+    }
+}

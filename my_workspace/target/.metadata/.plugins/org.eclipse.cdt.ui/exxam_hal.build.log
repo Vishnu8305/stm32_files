@@ -1,0 +1,10 @@
+11:07:02 **** Build of configuration Debug for project exxam_hal ****
+make -j8 all 
+arm-none-eabi-size  exxam_hal.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12684	     12	   1716	  14412	   384c	exxam_hal.elf
+Finished building: default.size.stdout
+ 
+
+11:07:06 Build Finished. 0 errors, 0 warnings. (took 3s.647ms)
+

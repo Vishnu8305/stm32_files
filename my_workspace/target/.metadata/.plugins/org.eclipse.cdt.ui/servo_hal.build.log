@@ -1,0 +1,10 @@
+13:06:54 **** Build of configuration Debug for project servo_hal ****
+make -j8 all 
+arm-none-eabi-size  servo_hal.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11188	     12	   1724	  12924	   327c	servo_hal.elf
+Finished building: default.size.stdout
+ 
+
+13:06:56 Build Finished. 0 errors, 0 warnings. (took 1s.484ms)
+

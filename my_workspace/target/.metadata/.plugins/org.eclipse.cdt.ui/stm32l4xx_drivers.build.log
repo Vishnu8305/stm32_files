@@ -1,0 +1,17 @@
+21:55:08 **** Incremental Build of configuration Debug for project stm32l4xx_drivers ****
+make -j8 all 
+arm-none-eabi-gcc "../drivers/src/stm32l4xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DNUCLEO_L476RG -DSTM32L476RGTx -c -I"D:/embaded-c/my_workspace/target/stm32l4xx_drivers/drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/src/stm32l4xx_gpio_driver.d" -MT"drivers/src/stm32l4xx_gpio_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/src/stm32l4xx_gpio_driver.o"
+arm-none-eabi-gcc "../Src/002_led_button.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DNUCLEO_L476RG -DSTM32L476RGTx -c -I"D:/embaded-c/my_workspace/target/stm32l4xx_drivers/drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/002_led_button.d" -MT"Src/002_led_button.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/002_led_button.o"
+../drivers/src/stm32l4xx_gpio_driver.c:329:6: error: conflicting types for 'GPIO_IRQPriorityConfig'; have 'void(uint8_t,  uint8_t)' {aka 'void(unsigned char,  unsigned char)'}
+  329 | void GPIO_IRQPriorityConfig(uint8_t IRQNumber ,uint8_t IRQPriority)
+      |      ^~~~~~~~~~~~~~~~~~~~~~
+In file included from ../drivers/src/stm32l4xx_gpio_driver.c:8:
+D:/embaded-c/my_workspace/target/stm32l4xx_drivers/drivers/inc/stm32l4xx_gpio_driver.h:120:6: note: previous declaration of 'GPIO_IRQPriorityConfig' with type 'void(uint8_t)' {aka 'void(unsigned char)'}
+  120 | void GPIO_IRQPriorityConfig(uint8_t IRQPriority);
+      |      ^~~~~~~~~~~~~~~~~~~~~~
+make: *** [drivers/src/subdir.mk:19: drivers/src/stm32l4xx_gpio_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+21:55:08 Build Failed. 3 errors, 0 warnings. (took 456ms)
+

@@ -1,0 +1,10 @@
+13:18:57 **** Build of configuration Debug for project 001HElloWorld ****
+make -j8 all 
+arm-none-eabi-size  001HElloWorld.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3396	     92	   1900	   5388	   150c	001HElloWorld.elf
+Finished building: default.size.stdout
+ 
+
+13:18:58 Build Finished. 0 errors, 0 warnings. (took 232ms)
+

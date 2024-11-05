@@ -1,0 +1,8 @@
+#include<stdio.h>
+int main(void){
+	print ("hello world");
+	print ("press 'enter'to exit this application\n");
+	getcher();
+	return 0;
+}
+

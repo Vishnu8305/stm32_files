@@ -1,0 +1,319 @@
+/*
+ * stm32l4xx_gpio_driver.c
+ *
+ *  Created on: Oct 18, 2024
+ *      Author: kunfu
+ */
+
+#include  "stm32l4xx_gpio_driver.h"
+
+/*
+ * peripheral clock setup
+ */
+/************************************
+ * @fn				- GPIO_PeriCLockCOntrol
+ // * @brief			- These function is used to enable and disable the peripheral clock of gpio port
+ * @
+ * @param[in]		- base address of the gpio peripheral
+ * @param[in]		-ENABLE or DESABLE macros
+ * @param[in]		-
+ *
+ * @return			- none
+ *
+ * @Note			-none
+ */
+void GPIO_PeriCLockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi) {
+	if (EnorDi == ENABLE) {
+		if (pGPIOx == GPIOA) {
+			GPIOA_PCLK_EN();
+		} else if (pGPIOx == GPIOB) {
+			GPIOB_PCLK_EN();
+		}
+		else if (pGPIOx == GPIOC) {
+			GPIOC_PCLK_EN();
+		} else if (pGPIOx == GPIOD) {
+			GPIOD_PCLK_EN();
+		}
+		else if (pGPIOx == GPIOE) {
+			GPIOE_PCLK_EN();
+		} else if (pGPIOx == GPIOF) {
+			GPIOF_PCLK_EN();
+		} else if (pGPIOx == GPIOG) {
+			GPIOG_PCLK_EN();
+		} else if (pGPIOx == GPIOH) {
+			GPIOH_PCLK_EN();
+		}
+	} else {
+		if (pGPIOx == GPIOA) {
+			GPIOA_PCLK_DI();
+		} else if (pGPIOx == GPIOB) {
+			GPIOB_PCLK_DI();
+		}
+		else if (pGPIOx == GPIOC) {
+			GPIOC_PCLK_DI();
+		} else if (pGPIOx == GPIOD) {
+			GPIOD_PCLK_DI();
+		} else if (pGPIOx == GPIOE) {
+			GPIOE_PCLK_DI();
+		} else if (pGPIOx == GPIOF) {
+			GPIOF_PCLK_DI();
+		} else if (pGPIOx == GPIOG) {
+			GPIOG_PCLK_DI();
+		} else if (pGPIOx == GPIOH) {
+			GPIOH_PCLK_DI();
+		}
+	}
+}
+
+/*
+ * init and deinit
+ */
+
+/************************************
+ * @fn				- GPIO_Init
+ // * @brief			- These function is used to handile the pin set mode
+ * @
+ * @param[in]		-  these holds the base address of the gpio port to which the pin belongs
+ * @param[in]		-	these tell the that the port is enabled or disabled
+ * @param[in]		-
+ *
+ * @return			- none
+ *
+ * @Note			-none
+ */
+void GPIO_Init(GPIO_Handel_t *pGPIOHandle) {
+	uint32_t temp = 0;
+	//1. config mod of gpio
+	if (pGPIOHandle->GPIO_PinConfig.GPIO_PinMode <= GPIO_MODE_ANALOG) {
+		temp = (pGPIOHandle->GPIO_PinConfig.GPIO_PinMode
+				<< (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
+		pGPIOHandle->pGPIOx->MODER &= ~(0x3 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
+		pGPIOHandle->pGPIOx->MODER |= temp;
+	} else {
+		//interept mode
+
+
+
+	}
+	temp = 0;
+	//2. config speed
+
+	temp = (pGPIOHandle->GPIO_PinConfig.GPIO_PinSpeed
+			<< (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
+	pGPIOHandle->pGPIOx->OSPEEDR &= ~(0x3 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
+
+	pGPIOHandle->pGPIOx->OSPEEDR |= temp;
+	temp = 0;
+
+
+	//3. config pull up and pulldown
+
+	temp = (pGPIOHandle->GPIO_PinConfig.GPIO_PinPuPdControl
+			<< (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
+	pGPIOHandle->pGPIOx->PUPDR &= ~(0x3 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
+
+	pGPIOHandle->pGPIOx->PUPDR |= temp;
+	temp = 0;
+
+	//4.config the output type
+
+	temp = (pGPIOHandle->GPIO_PinConfig.GPIO_PinOPType
+			<< (pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
+	pGPIOHandle->pGPIOx->OTYPER &= ~(0x1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
+
+	pGPIOHandle->pGPIOx->OTYPER |= temp;
+	temp = 0;
+
+	//5. config alter functions
+
+	if (pGPIOHandle->GPIO_PinConfig.GPIO_PinMode == GPIO_MODE_ALTFN) {
+		uint8_t  temp1,temp2;
+
+		temp1 = pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber/8;
+		temp2 = pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber%8;
+		pGPIOHandle->pGPIOx->AFR[temp1]  &= ~(0xF << (4* temp2));
+
+		pGPIOHandle->pGPIOx->AFR[temp1] |= (pGPIOHandle->GPIO_PinConfig.GPIO_PinAllFunMode << (4* temp2));
+	}
+}
+
+/************************************
+ * @fn				- GPIO_DeInit
+ // * @brief			- These function is used to handile the pin reset mode
+ * @
+ * @param[in]		-  these holds the base address of the gpio port to which the pin belongs
+ * @param[in]		-
+ * @param[in]		-
+ *
+ * @return			- none
+ *
+ * @Note			-none
+ */
+
+void GPIO_DeInit(GPIO_RegDef_t *pGPIOx)
+{
+
+			if (pGPIOx == GPIOA) {
+				GPIOA_REG_RESET();
+			} else if (pGPIOx == GPIOB) {
+				GPIOB_REG_RESET();
+			}
+			else if (pGPIOx == GPIOC) {
+				GPIOC_REG_RESET();
+			} else if (pGPIOx == GPIOD) {
+				GPIOD_REG_RESET();
+			}
+			else if (pGPIOx == GPIOE) {
+				GPIOE_REG_RESET();
+			} else if (pGPIOx == GPIOF) {
+				GPIOF_REG_RESET();
+			} else if (pGPIOx == GPIOG) {
+				GPIOG_REG_RESET();
+			} else if (pGPIOx == GPIOH) {
+				GPIOH_REG_RESET();
+			}
+
+}
+
+/*
+ * data read and write
+ */
+
+/************************************
+ * @fn				- GPIO_ReadFromInputPin
+ // * @brief			- These function is used to handile the read pin functunalitys
+ * @
+ * @param[in]		-  these holds the base address pf the gpio port
+ * @param[in]		-these function holds the pin number of that pin
+ * @param[in]		-
+ *
+ * @return			- 0 or 1
+ *
+ * @Note			-none
+ */
+
+uint8_t GPIO_ReadFromInputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber)
+{
+	uint8_t value;
+	value =	(uint8_t)((pGPIOx -> IDR >> PinNumber) & 0x00000001);
+	return value;
+}
+
+/************************************
+ * @fn				- GPIO_ReadFromInputPort
+ // * @brief			- These function is used to handile the read port functunalities
+ * @
+ * @param[in]		-  these holds the base address of the gpio port
+ * @param[in]		-
+ * @param[in]		-
+ *
+ * @return			- 0 or 1
+ *
+ * @Note			-none
+ */
+
+uint16_t GPIO_ReadFromInputPort(GPIO_RegDef_t *pGPIOx)
+{
+	uint16_t value;
+		value =	(uint16_t)(pGPIOx -> IDR );
+		return value;
+}
+
+/************************************
+ * @fn				- GPIO_WriteToOutputPin
+ // * @brief			- These function is used to handile the write  pin functunalities
+ * @
+ * @param[in]		-  these holds the base address of the gpio port
+ * @param[in]		- these function holds the pin number of that port
+ * @param[in]		- these will be sending the value as and output
+ *
+ * @return			- none
+ *
+ * @Note			-none
+ */
+
+void GPIO_WriteToOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber,uint8_t Value)
+{
+	if ( Value == GPIO_PIN_SET){
+		pGPIOx ->ODR |= (1<<PinNumber);
+	}
+	else{
+		pGPIOx ->ODR &= ~(1<<PinNumber);
+
+	}
+}
+
+/************************************
+ * @fn				- GPIO_WriteToOutputPort
+ // * @brief			- These function is used to handile the write  port functunalities
+ * @
+ * @param[in]		-  these holds the base address of the gpio port
+ * @param[in]		- these will be sending the value as and output
+ * @param[in]		-
+ *
+ * @return			- none
+ *
+ * @Note			-none
+ */
+
+void GPIO_WriteToOutputPort(GPIO_RegDef_t *pGPIOx, uint16_t Value)
+{
+	pGPIOx ->ODR =Value;
+}
+
+/************************************
+ * @fn				- PIO_ToggleOutPin
+ // * @brief			- These function is used to handile the toggling of an output
+ * @
+ * @param[in]		-  these holds the base address of the gpio port
+ * @param[in]		- these function is used for the storing the pin number of that port
+ * @param[in]		-
+ *
+ * @return			- none
+ *
+ * @Note			-none
+ */
+
+void GPIO_ToggleOutPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber)
+{
+	pGPIOx ->ODR ^=(1 <<PinNumber);
+}
+/*
+ * IRQ config
+ */
+
+/************************************
+ * @fn				- GPIO_IRQConfig
+ // * @brief			- These function is used to handile the configuration of the interapt
+ * @
+ * @param[in]		-
+ * @param[in]		-
+ * @param[in]		- these tell the that the port is enabled or disabled
+ *
+ * @return			- none
+ *
+ * @Note			-none
+ */
+
+void GPIO_IRQConfig(uint8_t IRQNumber, uint8_t IRQPriority, uint8_t EnorDi)
+{
+
+}
+
+/************************************
+ * @fn				- GPIO_IRQHandling
+ // * @brief			- These function is used to handile the handling  of the interapts
+ * @
+ * @param[in]		- it stores the pin number
+ * @param[in]		-
+ * @param[in]		-
+ *
+ * @return			- none
+ *
+ * @Note			-none
+ */
+
+void GPIO_IRQHandling(uint8_t PinNumber)
+{
+
+}

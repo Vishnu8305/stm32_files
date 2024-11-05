@@ -1,0 +1,42 @@
+#include <stdint.h>
+#include <stdio.h>
+
+int main(void)
+{
+    // 1. Enable clock for GPIOA (RCC_AHB2ENR)
+    uint32_t *PResi = (uint32_t*)0x4002104C;
+    *PResi |= (1 << 0);  // Enable GPIOA clock (set bit 0)
+
+    // 2. Configure PA0 as input (MODER register)
+    uint32_t *PMode = (uint32_t*)0x48000000;
+    *PMode &= ~(3 << 0);  // Clear mode bits 0 and 1 (PA0 as input)
+
+    // 3. Enable pull-down resistor for PA0 (PUPDR register)
+    uint32_t *pPullDown = (uint32_t*)0x4800000C;
+    *pPullDown &= ~(3 << 0);  // Clear pull-up/down bits for PA0
+    *pPullDown |= (2 << 0);   // Set PA0 pull-down (10 = pull-down)
+
+    // 4. Configure PA1 as output (MODER register)
+    *PMode &= ~(3 << 2);  // Clear mode bits 2 and 3 (PA1)
+    *PMode |= (1 << 2);   // Set PA1 as output (01)
+
+    // 5. ODR and IDR pointers
+    uint32_t *POut = (uint32_t*)0x48000014;  // ODR (output data register for PA1)
+    uint32_t *PIn = (uint32_t*)0x48000010;   // IDR (input data register for PA0)
+
+    // Main loop to continuously check the input state of PA0
+    while (1)
+    {
+        // Read PA0 input state
+        uint8_t in = (uint8_t)(*PIn & 0x1);  // Check if PA0 is high or low
+
+        if (in == 1)
+        {
+            *POut |= (1 << 1);  // Set PA1 high (turn LED on)
+        }
+        else
+        {
+            *POut &= ~(1 << 1);  // Set PA1 low (turn LED off)
+        }
+    }
+}

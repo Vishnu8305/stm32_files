@@ -1,0 +1,176 @@
+!SESSION 2024-08-27 07:36:48.031 -----------------------------------------------
+eclipse.buildId=Version 1.16.0
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-08-27 07:37:16.914
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-08-27 07:37:16.916
+!MESSAGE Log4j2 initialized with config file D:\embaded-c\incstruter\host\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-08-27 07:37:21.552
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:31.998
+!MESSAGE Indexed 'function' (1 sources, 13 headers) in 1.15 sec: 1,280 declarations; 1,815 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:32.359
+!MESSAGE Indexed 'ifelseBiggestOfTwo' (1 sources, 17 headers) in 0.354 sec: 1,328 declarations; 2,016 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:32.799
+!MESSAGE Indexed 'structPointer' (1 sources, 17 headers) in 0.28 sec: 1,330 declarations; 2,008 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:33.027
+!MESSAGE Indexed 'test2' (1 sources, 13 headers) in 0.225 sec: 1,274 declarations; 1,816 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:33.345
+!MESSAGE Indexed 'arrays_swap' (1 sources, 17 headers) in 0.311 sec: 1,350 declarations; 2,080 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:33.661
+!MESSAGE Indexed 'dataAlignment' (1 sources, 17 headers) in 0.312 sec: 1,329 declarations; 2,010 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:34.027
+!MESSAGE Indexed 'bitWise2Numbers' (1 sources, 17 headers) in 0.363 sec: 1,326 declarations; 2,003 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:34.361
+!MESSAGE Indexed 'math' (2 sources, 14 headers) in 0.324 sec: 1,295 declarations; 1,821 references; 0 unresolved inclusions; 0 syntax errors; 2 unresolved names (0.064%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:34.736
+!MESSAGE Indexed 'structInit' (1 sources, 17 headers) in 0.372 sec: 1,324 declarations; 1,988 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:34.963
+!MESSAGE Indexed 'var_address' (1 sources, 13 headers) in 0.225 sec: 1,272 declarations; 1,809 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:35.165
+!MESSAGE Indexed 'type_casting' (1 sources, 13 headers) in 0.198 sec: 1,273 declarations; 1,809 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:35.393
+!MESSAGE Indexed 'structPacketBitfield' (1 sources, 17 headers) in 0.228 sec: 1,331 declarations; 2,055 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:35.647
+!MESSAGE Indexed 'whileLoopEvenNum' (1 sources, 17 headers) in 0.25 sec: 1,327 declarations; 2,008 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:35.863
+!MESSAGE Indexed 'arrays_passing' (1 sources, 17 headers) in 0.215 sec: 1,330 declarations; 2,007 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:36.042
+!MESSAGE Indexed 'forLoopEvenNum' (1 sources, 17 headers) in 0.178 sec: 1,327 declarations; 2,008 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:36.281
+!MESSAGE Indexed 'constdata' (1 sources, 17 headers) in 0.237 sec: 1,322 declarations; 1,993 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:36.482
+!MESSAGE Indexed 'ifelseCastVote' (1 sources, 17 headers) in 0.2 sec: 1,321 declarations; 1,992 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:36.633
+!MESSAGE Indexed 'ASCII' (1 sources, 13 headers) in 0.15 sec: 1,277 declarations; 1,824 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:36.866
+!MESSAGE Indexed 'struct_array' (1 sources, 19 headers) in 0.231 sec: 1,880 declarations; 2,681 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:37.026
+!MESSAGE Indexed 'union' (1 sources, 17 headers) in 0.158 sec: 1,324 declarations; 1,996 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:37.177
+!MESSAGE Indexed 'ifelseifTax' (1 sources, 17 headers) in 0.149 sec: 1,327 declarations; 2,015 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:37.308
+!MESSAGE Indexed 'strings' (1 sources, 13 headers) in 0.129 sec: 1,271 declarations; 1,817 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:37.443
+!MESSAGE Indexed 'bitWiseSet' (1 sources, 17 headers) in 0.133 sec: 1,326 declarations; 1,996 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:37.576
+!MESSAGE Indexed 'bitWiseEvenOdd' (1 sources, 17 headers) in 0.132 sec: 1,325 declarations; 1,996 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:37.680
+!MESSAGE Indexed 'Average' (1 sources, 13 headers) in 0.102 sec: 1,275 declarations; 1,820 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:37.827
+!MESSAGE Indexed 'forloopNumberPyramid' (1 sources, 17 headers) in 0.145 sec: 1,327 declarations; 2,002 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:37.948
+!MESSAGE Indexed 'structPacket' (1 sources, 17 headers) in 0.12 sec: 1,331 declarations; 2,055 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:38.043
+!MESSAGE Indexed 'macro' (1 sources, 13 headers) in 0.094 sec: 1,272 declarations; 1,824 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:38.140
+!MESSAGE Indexed 'pointer_1' (1 sources, 13 headers) in 0.095 sec: 1,276 declarations; 1,826 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:38.255
+!MESSAGE Indexed 'pointer_2' (1 sources, 17 headers) in 0.112 sec: 1,322 declarations; 1,996 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:38.352
+!MESSAGE Indexed 'pointer' (1 sources, 13 headers) in 0.096 sec: 1,274 declarations; 1,817 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:38.502
+!MESSAGE Indexed 'student_record' (1 sources, 19 headers) in 0.149 sec: 1,929 declarations; 2,834 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:38.611
+!MESSAGE Indexed 'arrays' (1 sources, 17 headers) in 0.108 sec: 1,323 declarations; 2,000 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:38.719
+!MESSAGE Indexed 'ifstatementCastVote' (1 sources, 17 headers) in 0.106 sec: 1,321 declarations; 1,993 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:38.821
+!MESSAGE Indexed 'test' (1 sources, 13 headers) in 0.101 sec: 1,274 declarations; 1,811 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:38.936
+!MESSAGE Indexed 'WhileLoop1to10' (1 sources, 17 headers) in 0.11 sec: 1,325 declarations; 1,991 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:39.048
+!MESSAGE Indexed 'switchCaseArea' (1 sources, 17 headers) in 0.111 sec: 1,330 declarations; 2,070 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-27 07:40:39.186
+!MESSAGE Indexed 'unionBitExraction' (1 sources, 17 headers) in 0.137 sec: 1,333 declarations; 2,032 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-08-27 07:42:10.752
+!MESSAGE Error: Cannot run program "rm": Launching failed
+!STACK 0
+java.io.IOException: Cannot run program "rm": Launching failed
+	at org.eclipse.cdt.utils.spawner.Spawner.exec(Spawner.java:450)
+	at org.eclipse.cdt.utils.spawner.Spawner.<init>(Spawner.java:147)
+	at org.eclipse.cdt.utils.spawner.Spawner.<init>(Spawner.java:134)
+	at org.eclipse.cdt.utils.spawner.ProcessFactory$Builder.start(ProcessFactory.java:273)
+	at org.eclipse.cdt.utils.spawner.ProcessFactory.exec(ProcessFactory.java:366)
+	at org.eclipse.cdt.core.CommandLauncher.execute(CommandLauncher.java:189)
+	at org.eclipse.cdt.managedbuilder.internal.buildmodel.CommandBuilder.build(CommandBuilder.java:112)
+	at org.eclipse.cdt.managedbuilder.internal.buildmodel.StepBuilder.build(StepBuilder.java:96)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.cleanWithInternalBuilder(CommonBuilder.java:1225)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.clean(CommonBuilder.java:1121)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.clean(CommonBuilder.java:1070)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:1082)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:296)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:352)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:441)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:444)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:555)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:503)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:585)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:594)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:490)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:291)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2024-08-27 07:44:38.467
+!MESSAGE Exception trying to parse option [#include <C:/CTOOLS/mingw32/bin/../lib/gcc/i686-w64-mingw32/9.2.0/../../../../i686-w64-mingw32/include>], class GCCBuiltinSpecsDetectorMinGW
+!STACK 0
+java.util.ConcurrentModificationException
+	at java.base/java.util.HashMap.computeIfAbsent(HashMap.java:1221)
+	at org.eclipse.cdt.managedbuilder.language.settings.providers.AbstractLanguageSettingsOutputScanner.findContainerForLocationURI(AbstractLanguageSettingsOutputScanner.java:818)
+	at org.eclipse.cdt.managedbuilder.language.settings.providers.AbstractLanguageSettingsOutputScanner.resolvePathEntryInWorkspace(AbstractLanguageSettingsOutputScanner.java:1241)
+	at org.eclipse.cdt.managedbuilder.language.settings.providers.AbstractLanguageSettingsOutputScanner.createResolvedPathEntry(AbstractLanguageSettingsOutputScanner.java:1193)
+	at org.eclipse.cdt.managedbuilder.language.settings.providers.AbstractLanguageSettingsOutputScanner.processLine(AbstractLanguageSettingsOutputScanner.java:606)
+	at org.eclipse.cdt.managedbuilder.language.settings.providers.AbstractBuiltinSpecsDetector$ConsoleParserAdapter.processLine(AbstractBuiltinSpecsDetector.java:259)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:180)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:101)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:60)
+	at java.base/java.io.OutputStream.write(OutputStream.java:127)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:60)

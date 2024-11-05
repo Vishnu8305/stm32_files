@@ -1,0 +1,55 @@
+#include <stdint.h>
+
+int main(void)
+{
+    // 1. Enable clock for GPIOA by writing to RCC_AHB2ENR
+    uint32_t *pClkCtrlReg = (uint32_t*)0x4002104C;    // Address of RCC AHB2ENR
+    *pClkCtrlReg |= (1 << 0);                         // Set bit 0 to enable GPIOA clock
+
+    // 2. Set GPIOA Pin 1 (PA1) as output
+    uint32_t *pPortAModeReg = (uint32_t*)0x48000000;  // Address of GPIOA MODER
+    *pPortAModeReg &= ~(3 << 30);                      // Clear mode bits 2 and 3 for PA1
+    *pPortAModeReg &= ~(3 << 0);
+    *pPortAModeReg |= (1 << 30);                       // Set PA1 to output mode (01)
+    *pPortAModeReg |= (1 << 0);
+    // 3. Set PA1 (connected to the LED) to high
+    uint32_t *pPortAOutReg = (uint32_t*)0x48000014;   // Address of GPIOA ODR
+    *pPortAOutReg |= (1 << 15);                        // Set bit 1 to turn on the LED (PA1 high)
+    *pPortAOutReg |= (1 << 0);
+    while(1);  // Infinite loop to keep the LED on
+}
+
+
+
+
+
+
+
+
+IN THESE INIT FUNCTION AM I MAKING ALL THE VALUES TO 0 AND ATER I AM MAKONG THEM TO 1 WHICH I WANTOR WJAT void GPIO_Init(GPIO_Handel_t *pGPIOHandle) {
+    uint32_t temp = 0;
+
+    // 1. Configure the mode of GPIO (input, output, alt, analog)
+    if (pGPIOHandle->GPIO_PinConfig.GPIO_PinMode <= GPIO_MODE_ANALOG) {
+        temp = (pGPIOHandle->GPIO_PinConfig.GPIO_PinMode << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
+        pGPIOHandle->pGPIOx->MODER &= ~(0x3 << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));  // Clear mode bits
+        pGPIOHandle->pGPIOx->MODER |= temp;  // Set mode bits
+    } else {
+        // Handle interrupt mode if needed
+    }
+
+    // 2. Configure output type
+    temp = (pGPIOHandle->GPIO_PinConfig.GPIO_PinOPType << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
+    pGPIOHandle->pGPIOx->OTYPER &= ~(0x1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);  // Clear the bit
+    pGPIOHandle->pGPIOx->OTYPER |= temp;  // Set the bit
+
+    // 3. Configure speed
+    temp = (pGPIOHandle->GPIO_PinConfig.GPIO_PinSpeed << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
+    pGPIOHandle->pGPIOx->OSPEEDR &= ~(0x3 << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));  // Clear speed bits
+    pGPIOHandle->pGPIOx->OSPEEDR |= temp;  // Set speed bits
+
+    // 4. Configure pull-up/pull-down settings
+    temp = (pGPIOHandle->GPIO_PinConfig.GPIO_PinPuPdControl << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
+    pGPIOHandle->pGPIOx->PUPDR &= ~(0x3 << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));  // Clear pull-up/pull-down bits
+    pGPIOHandle->pGPIOx->PUPDR |= temp;  // Set pull-up/pull-down bits
+}

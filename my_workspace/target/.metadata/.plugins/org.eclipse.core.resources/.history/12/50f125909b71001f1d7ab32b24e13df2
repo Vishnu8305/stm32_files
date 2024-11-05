@@ -1,0 +1,41 @@
+#include <stdint.h>
+#include <stdio.h>
+uint8_t volatile button_press = 0;
+uint32_t button_count = 0;
+void button_init(void);
+	uint32_t *pClkCtrlReg 						=(uint32_t*)(0x40021000 + 0x00);
+	uint32_t *pClkCtrlRegApb2 					=(uint32_t*)(0x40010000 + 0x60);
+	uint32_t *pGPIOAModeReg						=(uint32_t*)(0x48000800 + 0x00);
+	uint32_t *pEXTIMaskReg						=(uint32_t*)(0x40010400 + 0x00);
+	uint32_t *pEXTTIEdgeCtrlReg					=(uint32_t*)(0x40010400 + 0x0C);
+	uint32_t *pSYSCFG_EXTICR4      			    = (uint32_t*)(0x40010000 + 0x14);
+	uint32_t *pNVICIRQEnReg    			        = (uint32_t*)(0xE000E100 + 0x00);
+
+void button_init(void){
+	*pClkCtrlReg |= (1<<2);
+	*pClkCtrlRegApb2 |= (1<<0);
+	*pGPIOCModeReg &= ~(3 << (13 * 2));
+	 *pSYSCFG_EXTICR4 &= ~(0xF << 4);
+	 *pSYSCFG_EXTICR4 |= (2 << 4);
+	*pEXTTIEdgeCtrlReg |= (1<<13);
+	*pEXTIMaskReg |= (1<<13);
+	*pNVICIRQEnReg |= (1<<40);
+}
+	int main(void)
+{
+	button_init();
+	while(1){
+		*pEXTIMaskReg &= ~(1<<13);
+		if (button_press){
+			for (uint32_t volatile i=0;i<500000/2;i++);
+			button_count++;
+			printf("Buton pressed :%lu\n",button_count);
+			button_press=0;
+		}
+		*pEXTIMaskReg |= (1<<13);
+	}
+}
+void EXTI0_IRQHandler(void){
+	button_press =1;
+	*pEXTTIPendReg |= (1<<13);
+}

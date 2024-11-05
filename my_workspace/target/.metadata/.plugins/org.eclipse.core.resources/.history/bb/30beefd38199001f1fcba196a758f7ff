@@ -1,0 +1,26 @@
+/*
+ * 001led_toggle.c
+ *
+ *  Created on: Nov 2, 2024
+ *      Author: kunfu
+ */
+#include "stm32l4xx.h"
+
+int main(void)
+{
+    // 1. Enable clock for GPIOA
+    RCC->AHB2ENR |= (1 << 0);  // Enable GPIOA clock
+
+    // 2. Configure PA5 as output
+    GPIOA->MODER &= ~(0x3 << (5 * 2));  // Clear mode bits for PA5
+    GPIOA->MODER |= (0x1 << (5 * 2));   // Set PA5 as output mode (01)
+
+    // 3. Set PA5 high (turn LED on)
+    GPIOA->ODR |= (1 << 5);  // Set PA5 to high (LED ON)
+
+    while (1) {
+        // Infinite loop to keep LED on
+    }
+
+    return 0;
+}

@@ -1,0 +1,16 @@
+11:58:14 **** Build of configuration Debug for project led_blink_hal ****
+make -j8 all 
+arm-none-eabi-gcc -o "led_blink_hal.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embaded-c\my_workspace\target\led_blink_hal\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="led_blink_hal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: led_blink_hal.elf
+ 
+arm-none-eabi-size  led_blink_hal.elf 
+arm-none-eabi-objdump -h -S led_blink_hal.elf  > "led_blink_hal.list"
+   text	   data	    bss	    dec	    hex	filename
+  12432	     12	   1708	  14152	   3748	led_blink_hal.elf
+Finished building: default.size.stdout
+ 
+Finished building: led_blink_hal.list
+ 
+
+11:58:15 Build Finished. 0 errors, 0 warnings. (took 827ms)
+
